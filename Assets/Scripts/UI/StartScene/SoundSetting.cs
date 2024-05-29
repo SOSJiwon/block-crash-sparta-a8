@@ -42,6 +42,11 @@ public class SoundSetting : MonoBehaviour
     public void SetMusicVolume()
     {
         float volume = musicSlider.value;
+
+        Debug.Log("linear 수 : "+ volume);
+        Debug.Log("log10 변환 수 : " + Mathf.Log10(volume));
+        Debug.Log("20 곱한 log10 수 : " + Mathf.Log10(volume)*20);
+
         audioMixer.SetFloat("BGM", Mathf.Log10(volume)*20);
         PlayerPrefs.SetFloat("BGMVolume", volume);
     }
